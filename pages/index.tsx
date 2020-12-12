@@ -2,10 +2,6 @@ import classNames from 'classnames'
 import Head from 'next/head'
 import { FC, useCallback } from 'react'
 
-function hover(...classes: string[]) {
-  return classes.map(c => `hover:${c}`).join(' ')
-}
-
 /**
  * I tried to write some shit code, hahhhhh.
  */
@@ -16,7 +12,10 @@ const NavigationButton: FC<{
   direction,
   className = classNames(
     'cursor-pointer w-6 text-sm',
-    hover('bg-red-700', 'text-red-800', 'border-red-900')
+
+    'hover:bg-red-700',
+    'hover:text-red-800',
+    'hover:border-red-900'
   ),
 }) => (
   <a
