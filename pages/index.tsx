@@ -13,6 +13,7 @@ const NavigationButton: FC<{
   className = classNames(
     'cursor-pointer w-6 text-sm',
 
+    // TODO: Change hover to active
     'hover:bg-red-700',
     'hover:text-red-800',
     'hover:border-red-900'
