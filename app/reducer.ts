@@ -1,5 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import volume from 'features/volume/reducer'
+import volume from 'app/volume/reducer'
 
 const reducer = combineReducers({
   volume,
