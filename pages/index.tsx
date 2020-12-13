@@ -10,6 +10,7 @@ import {
   MinimizeButton,
 } from 'components/window/WindowButton'
 import Volume from 'app/player/volume'
+import Progress from 'app/player/progress'
 
 /**
  * I tried to write some shit code, hahhhhh.
@@ -125,11 +126,11 @@ export default function Home() {
             <div className="bg-red-500 rounded-full w-9 h-9"></div>
             <div className="w-8 h-8 bg-red-500 rounded-full"></div>
           </div>
-          <div className="flex items-center flex-auto px-2 text-xs text-gray-700">
-            <time>00:00</time>
-            <div className="flex-auto h-1 mx-3 bg-red-500 rounded" />
-            <time>05:16</time>
+
+          <div className="flex-auto px-2">
+            <Progress />
           </div>
+
           <div className="flex items-center gap-4 px-2 text-gray-500">
             <Volume />
             <div>
