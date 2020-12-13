@@ -23,6 +23,7 @@ const slice = createSlice({
   },
 })
 
-export default slice.reducer
-
 export const { increaseVolume, decreaseVolume } = slice.actions
+
+const volume = slice.reducer
+export default volume
