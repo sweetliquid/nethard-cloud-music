@@ -4,7 +4,7 @@ import { HiVolumeUp } from 'react-icons/hi'
 import { useSelector } from 'react-redux'
 
 export default function Volume() {
-  const volume = useSelector<State>(state => state.volume)
+  const volume = useSelector<State>(state => state.player.volume)
 
   return (
     <div className="flex items-center gap-1">
