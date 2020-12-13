@@ -1,15 +1,15 @@
 import Head from 'next/head'
-import { FC, FormEvent, useCallback } from 'react'
+import React, { FC, FormEvent, useCallback } from 'react'
 import { BiSearch, BiCaretDown } from 'react-icons/bi'
 import { FaRegUserCircle, FaRandom } from 'react-icons/fa'
 import { RiTShirtLine, RiSettings3Line } from 'react-icons/ri'
 import { VscMail } from 'react-icons/vsc'
-import { HiVolumeUp } from 'react-icons/hi'
 import {
   CloseButton,
   MaximumButton,
   MinimizeButton,
 } from 'components/window/WindowButton'
+import Volume from 'components/Volume'
 
 /**
  * I tried to write some shit code, hahhhhh.
@@ -131,10 +131,7 @@ export default function Home() {
             <time>05:16</time>
           </div>
           <div className="flex items-center gap-4 px-2 text-gray-500">
-            <div className="flex items-center gap-1">
-              <HiVolumeUp />
-              --------
-            </div>
+            <Volume />
             <div>
               <FaRandom />
             </div>
