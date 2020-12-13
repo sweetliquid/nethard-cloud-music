@@ -4,7 +4,7 @@
 
 @layer utilities {
   .full-screen {
-    @apply h-screen w-screen;
+    @apply w-screen h-screen;
   }
 
   .flex-center-x {

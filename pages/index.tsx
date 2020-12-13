@@ -1,14 +1,15 @@
 import Head from 'next/head'
 import { FC, FormEvent, useCallback } from 'react'
 import { BiSearch, BiCaretDown } from 'react-icons/bi'
-import { FaRegUserCircle } from 'react-icons/fa'
+import { FaRegUserCircle, FaRandom } from 'react-icons/fa'
 import { RiTShirtLine, RiSettings3Line } from 'react-icons/ri'
+import { VscMail } from 'react-icons/vsc'
+import { HiVolumeUp } from 'react-icons/hi'
 import {
-  VscMail,
-  VscChromeMinimize,
-  VscChromeMaximize,
-  VscChromeClose,
-} from 'react-icons/vsc'
+  CloseButton,
+  MaximumButton,
+  MinimizeButton,
+} from 'components/window/WindowButton'
 
 /**
  * I tried to write some shit code, hahhhhh.
@@ -68,8 +69,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col full-screen">
-        <div className="h-12 bg-red-600 flex-center-y">
+      <div className="flex flex-col full-screen">
+        <nav className="h-12 bg-red-600 flex-center-y">
           <div className="w-48 px-1 flex-center-y">
             <img
               className="w-10 h-10"
@@ -107,18 +108,43 @@ export default function Home() {
             </div>
           </div>
           <div className="flex px-3">
-            <VscChromeMinimize className="w-6 text-lg text-gray-300 cursor-pointer hover:text-white" />
-            <VscChromeMaximize className="w-6 text-lg text-gray-300 cursor-pointer hover:text-white" />
-            <VscChromeClose className="w-6 text-lg text-gray-300 cursor-pointer hover:text-white" />
+            <MinimizeButton />
+            <MaximumButton />
+            <CloseButton />
           </div>
-        </div>
+        </nav>
 
-        <div className="flex flex-auto">
+        <main className="flex flex-auto">
           <div className="w-48 bg-gray-100"></div>
           <div className="flex-auto"></div>
-        </div>
-        <div className="h-10"></div>
-      </main>
+        </main>
+
+        <footer className="flex items-center h-12 bg-white border">
+          <div className="flex items-center w-48 justify-evenly">
+            <div className="w-8 h-8 bg-red-500 rounded-full"></div>
+            <div className="bg-red-500 rounded-full w-9 h-9"></div>
+            <div className="w-8 h-8 bg-red-500 rounded-full"></div>
+          </div>
+          <div className="flex items-center flex-auto px-2 text-xs text-gray-700">
+            <time>00:00</time>
+            <div className="flex-auto h-1 mx-3 bg-red-500 rounded" />
+            <time>05:16</time>
+          </div>
+          <div className="flex items-center gap-4 px-2 text-gray-500">
+            <div className="flex items-center gap-1">
+              <HiVolumeUp />
+              --------
+            </div>
+            <div>
+              <FaRandom />
+            </div>
+            <div className="flex items-center justify-center w-5 h-5 text-sm font-thin border ralight">
+              词
+            </div>
+            <div>播放列表</div>
+          </div>
+        </footer>
+      </div>
     </div>
   )
 }
