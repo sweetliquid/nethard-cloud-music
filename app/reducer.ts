@@ -1,8 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import volume from 'app/volume/reducer'
+import player from './player/reducer'
 
 const reducer = combineReducers({
-  volume,
+  player,
 })
 
 export type State = ReturnType<typeof reducer>

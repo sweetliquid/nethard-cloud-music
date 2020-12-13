@@ -9,7 +9,7 @@ import {
   MaximumButton,
   MinimizeButton,
 } from 'components/window/WindowButton'
-import Volume from 'app/volume'
+import Volume from 'app/player/volume'
 
 /**
  * I tried to write some shit code, hahhhhh.
