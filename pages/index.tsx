@@ -9,8 +9,8 @@ import {
   MaximumButton,
   MinimizeButton,
 } from 'components/window/WindowButton'
-import Volume from 'app/player/volume'
-import Progress from 'app/player/progress'
+import Volume from 'app/player/volume/Volume'
+import Progress from 'app/player/progress/Progress'
 
 /**
  * I tried to write some shit code, hahhhhh.
