@@ -9,7 +9,7 @@ import {
   MaximumButton,
   MinimizeButton,
 } from 'components/window/WindowButton'
-import Volume from 'components/Volume'
+import Volume from 'features/volume'
 
 /**
  * I tried to write some shit code, hahhhhh.
