@@ -59,88 +59,105 @@ const SearchBar: FC = () => {
   )
 }
 
-const Layout: FC = () => {
-  return (
-    <div>
-      <Head>
-        <title>Nethard Cloud Music</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+const Header: FC = () => (
+  <Head>
+    <title>Nethard Cloud Music</title>
+    <link rel="icon" href="/favicon.ico" />
+  </Head>
+)
 
-      <div className="flex flex-col full-screen">
-        <nav className="h-12 bg-red-600 flex-center-y">
-          <div className="w-48 px-1 flex-center-y">
-            <img
-              className="w-10 h-10"
-              src="/NetEase_Music-Logo.wine.svg"
-              alt="logo"
-            />
-            <span className="text-white">网易云音乐</span>
-          </div>
+const Container: FC = ({ children }) => (
+  <div className="flex flex-col full-screen">{children}</div>
+)
 
-          <div className="flex font-bold text-center text-white border border-red-700 rounded">
-            <NavigationButton direction="<" />
-            <div className="border-l border-red-700" />
-            <NavigationButton direction=">" />
-          </div>
+const Navbar: FC = () => (
+  <nav className="h-12 bg-red-600 flex-center-y">
+    <div className="w-48 px-1 flex-center-y">
+      <img
+        className="w-10 h-10"
+        src="/NetEase_Music-Logo.wine.svg"
+        alt="logo"
+      />
+      <span className="text-white">网易云音乐</span>
+    </div>
 
-          <div className="ml-3">
-            <SearchBar />
-          </div>
+    <div className="flex font-bold text-center text-white border border-red-700 rounded">
+      <NavigationButton direction="<" />
+      <div className="border-l border-red-700" />
+      <NavigationButton direction=">" />
+    </div>
 
-          {/* TODO: Replace this icon with an avatar */}
-          <FaRegUserCircle className="ml-auto text-xl text-white cursor-pointer" />
-          <div className="flex border-r border-red-700">
-            <div className="flex items-center gap-1 px-3 text-xs text-gray-300 cursor-pointer hover:text-white">
-              <p className="">Sweet Liquid</p>
-              <BiCaretDown className="inline" />
-            </div>
-            <div className="flex items-center gap-1 px-3 text-lg text-gray-300 cursor-pointer hover:text-white">
-              <RiTShirtLine />
-            </div>
-            <div className="flex items-center gap-1 px-3 text-lg text-gray-300 cursor-pointer hover:text-white">
-              <VscMail />
-            </div>
-            <div className="flex items-center gap-1 px-3 text-lg text-gray-300 cursor-pointer hover:text-white">
-              <RiSettings3Line />
-            </div>
-          </div>
-          <div className="flex px-3">
-            <MinimizeButton />
-            <MaximumButton />
-            <CloseButton />
-          </div>
-        </nav>
+    <div className="ml-3">
+      <SearchBar />
+    </div>
 
-        <main className="flex flex-auto">
-          <div className="w-48 bg-gray-100"></div>
-          <div className="flex-auto"></div>
-        </main>
-
-        <footer className="flex items-center h-12 bg-white border">
-          <div className="flex items-center w-48 justify-evenly">
-            <div className="w-8 h-8 bg-red-500 rounded-full"></div>
-            <div className="bg-red-500 rounded-full w-9 h-9"></div>
-            <div className="w-8 h-8 bg-red-500 rounded-full"></div>
-          </div>
-
-          <div className="flex-auto px-2">
-            <Progress />
-          </div>
-
-          <div className="flex items-center gap-4 px-2 text-gray-500">
-            <Volume />
-            <div>
-              <FaRandom />
-            </div>
-            <div className="flex items-center justify-center w-5 h-5 text-sm font-thin border ralight">
-              词
-            </div>
-            <div>播放列表</div>
-          </div>
-        </footer>
+    {/* TODO: Replace this icon with an avatar */}
+    <FaRegUserCircle className="ml-auto text-xl text-white cursor-pointer" />
+    <div className="flex border-r border-red-700">
+      <div className="flex items-center gap-1 px-3 text-xs text-gray-300 cursor-pointer hover:text-white">
+        <p className="">Sweet Liquid</p>
+        <BiCaretDown className="inline" />
+      </div>
+      <div className="flex items-center gap-1 px-3 text-lg text-gray-300 cursor-pointer hover:text-white">
+        <RiTShirtLine />
+      </div>
+      <div className="flex items-center gap-1 px-3 text-lg text-gray-300 cursor-pointer hover:text-white">
+        <VscMail />
+      </div>
+      <div className="flex items-center gap-1 px-3 text-lg text-gray-300 cursor-pointer hover:text-white">
+        <RiSettings3Line />
       </div>
     </div>
+    <div className="flex px-3">
+      <MinimizeButton />
+      <MaximumButton />
+      <CloseButton />
+    </div>
+  </nav>
+)
+
+const Content: FC = ({ children }) => (
+  <main className="flex flex-auto">
+    <div className="w-48 bg-gray-100"></div>
+    <div className="flex-auto">{children}</div>
+  </main>
+)
+
+const Player: FC = () => (
+  <footer className="flex items-center h-12 bg-white border">
+    <div className="flex items-center w-48 justify-evenly">
+      <div className="w-8 h-8 bg-red-500 rounded-full"></div>
+      <div className="bg-red-500 rounded-full w-9 h-9"></div>
+      <div className="w-8 h-8 bg-red-500 rounded-full"></div>
+    </div>
+
+    <div className="flex-auto px-2">
+      <Progress />
+    </div>
+
+    <div className="flex items-center gap-4 px-2 text-gray-500">
+      <Volume />
+      <div>
+        <FaRandom />
+      </div>
+      <div className="flex items-center justify-center w-5 h-5 text-sm font-thin border ralight">
+        词
+      </div>
+      <div>播放列表</div>
+    </div>
+  </footer>
+)
+
+const Layout: FC = ({ children }) => {
+  return (
+    <>
+      <Header />
+      <Container>
+        <Navbar />
+        <Content>{children}</Content>
+        <Player />
+      </Container>
+    </>
   )
 }
 
