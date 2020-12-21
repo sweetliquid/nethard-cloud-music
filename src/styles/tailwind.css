@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer utilities {
+}
+
+@layer components {
   .full-screen {
     @apply w-screen h-screen;
   }
@@ -15,7 +18,7 @@
     @apply flex items-center;
   }
 
-  .flex-center-xy {
+  .flex-center {
     @apply flex-center-x flex-center-y;
   }
 
