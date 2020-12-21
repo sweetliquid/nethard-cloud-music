@@ -16,7 +16,7 @@ const NavigationButton: FC<{
   className?: string
 }> = ({
   direction,
-  className = 'w-6 text-sm cursor-pointer hover:bg-red-700 hover:text-red-800 hover:border-red-90',
+  className = 'hover:bg-red-700 hover:text-red-800 hover:border-red-90 w-6 text-sm cursor-pointer',
 }) => (
   <a
     className={className}
@@ -47,12 +47,12 @@ const SearchBar: FC = () => {
     <form className="flex-center-y" onSubmit={handleSubmit}>
       <input
         // TODO: placeholder active variants: opacity-0
-        className="px-3 py-1 text-xs text-white placeholder-gray-300 bg-red-700 outline-none rounded-xl placeholder-opacity-60 hover:placeholder-opacity-0 w-60"
+        className="rounded-xl placeholder-opacity-60 hover:placeholder-opacity-0 w-60 px-3 py-1 text-xs text-white placeholder-gray-300 bg-red-700 outline-none"
         type="text"
         placeholder="搜索音乐，歌手，歌词，用户"
       />
       <button>
-        <BiSearch className="relative text-gray-300 -left-6 opacity-70 hover:text-white" />
+        <BiSearch className="-left-6 opacity-70 hover:text-white relative text-gray-300" />
       </button>
     </form>
   )
@@ -66,12 +66,12 @@ const Header: FC = () => (
 )
 
 const Container: FC = ({ children }) => (
-  <div className="flex flex-col full-screen">{children}</div>
+  <div className="full-screen flex flex-col">{children}</div>
 )
 
 const Navbar: FC = () => (
-  <nav className="h-12 bg-red-600 flex-center-y">
-    <div className="w-48 px-1 flex-center-y">
+  <nav className="flex-center-y h-12 bg-red-600">
+    <div className="flex-center-y w-48 px-1">
       <img
         className="w-10 h-10"
         src="/NetEase_Music-Logo.wine.svg"
@@ -93,17 +93,17 @@ const Navbar: FC = () => (
     {/* TODO: Replace this icon with an avatar */}
     <FaRegUserCircle className="ml-auto text-xl text-white cursor-pointer" />
     <div className="flex border-r border-red-700">
-      <div className="flex items-center gap-1 px-3 text-xs text-gray-300 cursor-pointer hover:text-white">
+      <div className="hover:text-white flex items-center gap-1 px-3 text-xs text-gray-300 cursor-pointer">
         <p className="">Sweet Liquid</p>
         <BiCaretDown className="inline" />
       </div>
-      <div className="flex items-center gap-1 px-3 text-lg text-gray-300 cursor-pointer hover:text-white">
+      <div className="hover:text-white flex items-center gap-1 px-3 text-lg text-gray-300 cursor-pointer">
         <RiTShirtLine />
       </div>
-      <div className="flex items-center gap-1 px-3 text-lg text-gray-300 cursor-pointer hover:text-white">
+      <div className="hover:text-white flex items-center gap-1 px-3 text-lg text-gray-300 cursor-pointer">
         <VscMail />
       </div>
-      <div className="flex items-center gap-1 px-3 text-lg text-gray-300 cursor-pointer hover:text-white">
+      <div className="hover:text-white flex items-center gap-1 px-3 text-lg text-gray-300 cursor-pointer">
         <RiSettings3Line />
       </div>
     </div>
