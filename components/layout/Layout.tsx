@@ -32,7 +32,7 @@ const NavigationButton: FC<{
         default:
           break
       }
-    }, [])}
+    }, [direction])}
   >
     {direction}
   </a>
