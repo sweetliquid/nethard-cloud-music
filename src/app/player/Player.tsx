@@ -1,15 +1,12 @@
 import React, { FC } from 'react'
 import { FaRandom } from 'react-icons/fa'
+import Controls from './controls/Controls'
 import Progress from './progress/Progress'
 import Volume from './volume/Volume'
 
 const Player: FC = () => (
   <footer className="flex items-center h-12 bg-white border">
-    <div className="flex items-center w-48 justify-evenly">
-      <div className="w-8 h-8 bg-red-500 rounded-full"></div>
-      <div className="bg-red-500 rounded-full w-9 h-9"></div>
-      <div className="w-8 h-8 bg-red-500 rounded-full"></div>
-    </div>
+    <Controls />
 
     <div className="flex-auto px-2">
       <Progress />
