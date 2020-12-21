@@ -1,5 +1,4 @@
-import Progress from 'app/player/progress/Progress'
-import Volume from 'app/player/volume/Volume'
+import Player from 'app/player/Player'
 import {
   MinimizeButton,
   MaximumButton,
@@ -8,7 +7,7 @@ import {
 import Head from 'next/head'
 import React, { FC, FormEvent, useCallback } from 'react'
 import { BiCaretDown, BiSearch } from 'react-icons/bi'
-import { FaRandom, FaRegUserCircle } from 'react-icons/fa'
+import { FaRegUserCircle } from 'react-icons/fa'
 import { RiTShirtLine, RiSettings3Line } from 'react-icons/ri'
 import { VscMail } from 'react-icons/vsc'
 
@@ -121,31 +120,6 @@ const Content: FC = ({ children }) => (
     <div className="w-48 bg-gray-100"></div>
     <div className="flex-auto">{children}</div>
   </main>
-)
-
-const Player: FC = () => (
-  <footer className="flex items-center h-12 bg-white border">
-    <div className="flex items-center w-48 justify-evenly">
-      <div className="w-8 h-8 bg-red-500 rounded-full"></div>
-      <div className="bg-red-500 rounded-full w-9 h-9"></div>
-      <div className="w-8 h-8 bg-red-500 rounded-full"></div>
-    </div>
-
-    <div className="flex-auto px-2">
-      <Progress />
-    </div>
-
-    <div className="flex items-center gap-4 px-2 text-gray-500">
-      <Volume />
-      <div>
-        <FaRandom />
-      </div>
-      <div className="flex items-center justify-center w-5 h-5 text-sm font-thin border ralight">
-        词
-      </div>
-      <div>播放列表</div>
-    </div>
-  </footer>
 )
 
 const Layout: FC = ({ children }) => {
