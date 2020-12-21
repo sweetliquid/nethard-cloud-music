@@ -2,35 +2,39 @@ import { State } from 'app/reducer'
 import classNames from 'classnames'
 import { FC, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import styled from 'styled-components'
 import { toggle } from '../playing/playingReducer'
+import { IconType } from 'react-icons/lib'
+import {
+  IoPlaySharp,
+  IoPauseSharp,
+  IoPlayBackSharp,
+  IoPlayForwardSharp,
+} from 'react-icons/io5'
 
-const Control: FC<{ primary?: boolean; onClick?: () => void }> = ({
-  primary = false,
-  onClick,
-  children,
-}) => (
+const Control: FC<{
+  primary?: boolean
+  onClick?: () => void
+  Icon?: IconType
+}> = ({ primary = false, onClick, Icon }) => (
   <div
     className={classNames(
-      'text-white bg-red-500 rounded-full',
-      primary ? 'w-9 h-9' : 'w-7 h-7'
+      'flex items-center justify-center text-white bg-red-500 rounded-full cursor-pointer',
+      primary ? 'wh-9' : 'wh-7'
     )}
     onClick={onClick}
   >
-    {children}
+    {Icon && <Icon className={primary ? 'wh-5' : 'wh-4'} />}
   </div>
 )
 
 export function Prev() {
-  return <Control />
+  return <Control Icon={IoPlayBackSharp} />
 }
 
 export function Next() {
-  return <Control />
+  return <Control Icon={IoPlayForwardSharp} />
 }
 
-const Play = styled.div``
-const Pause = styled.div``
 export function PlayPause() {
   const dispatch = useDispatch()
   const isPlaying = useSelector<State, boolean>(state => state.player.playing)
@@ -41,15 +45,17 @@ export function PlayPause() {
   }, [dispatch])
 
   return (
-    <Control primary onClick={handleClick}>
-      {isPlaying ? <Pause /> : <Play />}
-    </Control>
+    <Control
+      primary
+      onClick={handleClick}
+      Icon={isPlaying ? IoPauseSharp : IoPlaySharp}
+    />
   )
 }
 
 export default function Controls() {
   return (
-    <div className="flex items-center w-48 justify-evenly">
+    <div className="justify-evenly flex items-center w-48">
       <Prev />
       <PlayPause />
       <Next />
