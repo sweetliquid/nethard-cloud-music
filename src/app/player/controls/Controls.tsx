@@ -1,5 +1,5 @@
 import { State } from 'app/reducer'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { FC, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggle } from '../playing/playingReducer'
@@ -17,7 +17,7 @@ const Control: FC<{
   Icon?: IconType
 }> = ({ primary = false, onClick, Icon }) => (
   <div
-    className={classNames(
+    className={clsx(
       'flex items-center justify-center text-white bg-red-500 rounded-full cursor-pointer',
       primary ? 'wh-9' : 'wh-7'
     )}
