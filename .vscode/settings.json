@@ -1,9 +1,10 @@
 {
   "css.validate": false,
   "editor.quickSuggestions": {
-    "other": true,
     "comments": false,
+    "other": true,
     "strings": true
   },
+  "emmet.triggerExpansionOnTab": true,
   "tailwindCSS.emmetCompletions": true
 }
